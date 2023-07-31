@@ -107,6 +107,24 @@ class AVLTree {
         }
     }
 }
+// create a new instance of AVLTree
+const avlTree = new AVLTree()
+
+avlTree.insert(20)
+avlTree.insert(11)
+avlTree.insert(5)
+avlTree.insert(7)
+avlTree.insert(49)
+avlTree.insert(17)
+avlTree.insert(3)
+avlTree.insert(6)
+avlTree.insert(8)
+avlTree.insert(18)
+// display the avl tree structure 
+console.log(JSON.stringify(avlTree.root, null, 2))
+// output the root node height
+console.log('Root Node Height', avlTree.root.height)
+
 
 module.exports = {
     Node,
