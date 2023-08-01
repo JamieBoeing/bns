@@ -1,21 +1,13 @@
-class Node {
-    constructor(data){
-        this.data = data
-        this.left = null
-        this.right = null
-        this.height = 1
-    // a node has data, left, and right pointers
-    // a node also has a height property that starts at 1
-    // left and right are intialized as null
-    }
-}
-class AVLTree {
+const { BinaryNode, BinaryTree } =require('./bst')
+
+class AVLTree extends BinaryTree{
     constructor(){
-        this.root = null
-        // when a new Tree is made, it has a root property
+        super()
     }
+
+
     insert(data) {
-        const newNode = new Node(data);
+        const newNode = new BinaryNode(data);
         if (!this.root) {
           this.root = newNode;
         } else {
@@ -107,26 +99,29 @@ class AVLTree {
         }
     }
 }
-// create a new instance of AVLTree
+
+
 const avlTree = new AVLTree()
 
+avlTree.insert(10)
 avlTree.insert(20)
-avlTree.insert(11)
 avlTree.insert(5)
-avlTree.insert(7)
-avlTree.insert(49)
 avlTree.insert(17)
+avlTree.insert(14)
+avlTree.insert(38)
+avlTree.insert(12)
 avlTree.insert(3)
 avlTree.insert(6)
-avlTree.insert(8)
-avlTree.insert(18)
-// display the avl tree structure 
+avlTree.insert(34)
+
+console.log('---Tree---')
 console.log(JSON.stringify(avlTree.root, null, 2))
-// output the root node height
 console.log('Root Node Height', avlTree.root.height)
 
 
+
+
 module.exports = {
-    Node,
+   
     AVLTree
 }
